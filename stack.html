@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>【JS】スタック問題</title>
+</head>
+
+<body>
+    <input type="button" id="run-button" value="実行" />
+    <div name="result-text" id="result-text"></div> <!-- divタグに出力しましょう。 -->
+</body>
+
+<script language="javascript" type="text/javascript">
+    //関数などのコードを書きましょう。
+    var stack = [];
+const push = (str) => {
+    stack.push(str);
+};
+const pop = () => {
+    stack.pop(stack.length-1);
+    Object.keys(stack);
+};
+    const run_button = document.getElementById('run-button');
+    const result_text = document.getElementById('result-text');
+
+    run_button.addEventListener('click', () => {
+        push('9');
+        push('8');
+        push('7');
+        result_text.innerHTML = result_text.innerHTML + '<p>' + stack.toString() + '</p>';
+        pop();
+        pop();
+        result_text.innerHTML = result_text.innerHTML + '<p>' + stack.toString() + '</p>';
+        push('6');
+        push('5');
+        pop();
+        push('4');
+        pop();
+        push('3');
+        result_text.innerHTML = result_text.innerHTML + '<p>' + stack.toString() + '</p>';
+    });
+</script>
+
+</html>
